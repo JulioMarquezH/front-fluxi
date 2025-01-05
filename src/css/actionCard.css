@@ -1,0 +1,41 @@
+
+.actionCard {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    transition: border-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .actionCard:hover {
+    border-color: #3b82f6;
+  }
+  
+  .actionCardContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .actionCardIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #6b7280;
+    transition: color 0.3s ease;
+  }
+  
+  .actionCard:hover .actionCardIcon {
+    color: #3b82f6;
+  }
+  
+  .actionCardTitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    transition: color 0.3s ease;
+  }
+  
+  .actionCard:hover .actionCardTitle {
+    color: #3b82f6;
+  }
+  

@@ -1,0 +1,97 @@
+/* [project]/src/css/actionCard.css [app-client] (css) */
+.actionCard {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  border: 1px solid #e5e7eb;
+  transition: border-color .3s;
+}
+
+.actionCard:hover {
+  border-color: #3b82f6;
+}
+
+.actionCardContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actionCardIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #6b7280;
+  transition: color .3s;
+}
+
+.actionCard:hover .actionCardIcon {
+  color: #3b82f6;
+}
+
+.actionCardTitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  transition: color .3s;
+}
+
+.actionCard:hover .actionCardTitle {
+  color: #3b82f6;
+}
+
+
+/* [project]/src/css/home.css [app-client] (css) */
+.container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.main {
+  padding-left: 15rem;
+  padding: 2rem;
+}
+
+.content {
+  max-width: 96rem;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.header {
+  background-color: #6366f1;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  gap: .25rem;
+}
+
+.dateText {
+  font-size: .875rem;
+  font-weight: 500;
+  opacity: .9;
+}
+
+.greeting {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (width >= 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/*# sourceMappingURL=src_css_9dbaf2._.css.map*/

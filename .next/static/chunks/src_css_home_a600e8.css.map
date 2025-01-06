@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/juliohernandez/Desktop/fluxi/front-fluxi/src/css/home.css"],"sourcesContent":[".container {\n    min-height: 100vh;\n    background-color: #f9fafb;\n}\n\n.main {\n    padding-left: 15rem;\n    padding: 2rem;\n}\n\n.content {\n    max-width: 96rem;\n    margin: 0 auto;\n    gap: 2rem;\n}\n\n.header {\n    background-color: #6366f1;\n    color: white;\n    padding: 1.5rem;\n    border-radius: 0.5rem;\n    gap: 0.25rem;\n}\n\n.dateText {\n    font-size: 0.875rem;\n    font-weight: 500;\n    opacity: 0.9;\n}\n\n.greeting {\n    font-size: 1.875rem;\n    font-weight: 600;\n}\n\n.sectionTitle {\n    font-size: 1.5rem;\n    color: #4b5563;\n    margin-bottom: 1.5rem;\n}\n\n.grid {\n    display: grid;\n    grid-template-columns: repeat(1, 1fr);\n    gap: 1rem;\n}\n\n@media (min-width: 768px) {\n    .grid {\n        grid-template-columns: repeat(2, 1fr);\n    }\n}"],"names":[],"mappings":"AAAA;;;;;AAKA;;;;;AAKA;;;;;;AAMA;;;;;;;;AAQA;;;;;;AAMA;;;;;AAKA;;;;;;AAMA;;;;;;AAMA;EACI"}},
-    {"offset": {"line": 53, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

@@ -1,5 +1,5 @@
 'use client'
-import { use, useEffect, useState } from "react"
+import { useState } from "react"
 import { GeneralSection } from "./sections/GeneralSection"
 import { InventorySection } from "./sections/InventorySection"
 import { ImagesSection } from "./sections/ImagesSection"

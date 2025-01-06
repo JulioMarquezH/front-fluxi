@@ -1,6 +1,6 @@
 'use client';
 
-import { getStore } from '@/service/backFluxi';
+import { deleteStore, getStore } from '@/service/backFluxi';
 import { Box, CircularProgress } from '@mui/material';
 import { Pencil, Trash2 } from 'lucide-react';
 import Image from 'next/image';
@@ -17,6 +17,17 @@ export function StoreTable() {
       .catch(({ error }) => console.log(error))
       .finally(() => setLoading(false));
   }, []);
+
+  const handleDeleteStore = (store_id) => {
+    deleteStore(store_id)
+      .then(({ data }) => {
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  }
 
   return (
     <div className="table-container">
@@ -54,7 +65,7 @@ export function StoreTable() {
                     <button className="action-btn edit">
                       <Pencil className="icon" />
                     </button>
-                    <button className="action-btn delete">
+                    <button onClick={() => handleDeleteStore(store._id)} className="action-btn delete">
                       <Trash2 className="icon" />
                     </button>
                   </div>
@@ -64,7 +75,7 @@ export function StoreTable() {
           </tbody>
         </table>)
         : (
-          <Box sx={{ display:'flex', justifyContent: 'center' }} ><CircularProgress /></Box>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }} ><CircularProgress /></Box>
         )}
     </div>
   );

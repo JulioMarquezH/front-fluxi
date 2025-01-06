@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react';
 
-export function WarehouseForm({ storeData, setStoreData = () => {} }) {
+export function WarehouseForm({ storeData, setStoreData = () => { } }) {
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setStoreData((prevState) => ({
       ...prevState,
-      [id]: value, 
+      [id]: value,
     }));
   };
 
@@ -16,7 +16,7 @@ export function WarehouseForm({ storeData, setStoreData = () => {} }) {
       const updatedGuideFormat = prevState.guideFormat.includes(service)
         ? prevState.guideFormat
         : [...prevState.guideFormat, service];
-      
+
       return {
         ...prevState,
         guideFormat: updatedGuideFormat,
@@ -62,25 +62,38 @@ export function WarehouseForm({ storeData, setStoreData = () => {} }) {
             onChange={handleInputChange}
           >
             <option value="">Departamento</option>
-            <option value="2">Antioquia</option>
-            <option value="3">Bogotá D.C.</option>
-            <option value="4">Valle del Cauca</option>
+            <option value="Antioquia">Antioquia</option>
+            <option value="Bogotá D.C.">Bogotá D.C.</option>
+            <option value="Valle del Cauca">Valle del Cauca</option>
           </select>
         </div>
 
         <div className="form-group">
           <label>Ciudad</label>
           <select
-            id="city"
+            id="city_id"
             className="form-select"
-            value={storeData.city}
-            onChange={handleInputChange}
+            value={storeData.city_id || ""}
+            onChange={(e) => {
+              const selectedCityId = parseInt(e.target.value);
+              const selectedCityName = e.target.selectedOptions[0].text;
+              console.log(selectedCityId, selectedCityName);
+
+              setStoreData((prevState) => ({
+                ...prevState,
+                city_id: selectedCityId,
+                city_name: selectedCityName,
+              }));
+            }}
           >
             <option value="">Ciudad</option>
             <option value="1">Medellín</option>
             <option value="2">Bogotá</option>
             <option value="3">Cali</option>
           </select>
+
+
+
         </div>
 
         <div className="form-group full-width">
@@ -115,6 +128,7 @@ export function WarehouseForm({ storeData, setStoreData = () => {} }) {
           <div key={service} className="form-group">
             <label>{service}</label>
             <select
+              id="guideFormat"
               className="form-select"
               value={storeData.guideFormat.includes(service) ? service : ""}
               onChange={(e) => handleGuideFormatChange(e, service)}

@@ -2,12 +2,12 @@
 import { Button, Card, CardContent } from '@mui/material'
 import { Upload } from 'lucide-react'
 import '@/css/imagesSection.css';
-
 export function ImagesSection({ productData, handleChange }) {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      handleChange({ target: { id: 'image', value: file } });
+      const imageUrl = URL.createObjectURL(file);
+      handleChange({ target: { id: 'image', value: imageUrl } });
     }
   };
 
@@ -31,7 +31,7 @@ export function ImagesSection({ productData, handleChange }) {
         ) : (
           <div className="image-preview">
             <img
-              src={URL.createObjectURL(productData.image)}
+              src={productData.image} // Mostrar la URL directamente
               alt="Vista previa"
               className="image-preview-img"
             />

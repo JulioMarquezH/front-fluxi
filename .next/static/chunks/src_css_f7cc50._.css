@@ -107,6 +107,32 @@
   color: #3b82f6;
 }
 
+.company-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all .3s;
+  border-radius: 5px;
+}
+
+.company-item:hover {
+  background-color: #f7f7f7;
+}
+
+.company-item.selected {
+  border-color: #007bff;
+  background-color: #e9f5ff;
+  font-weight: bold;
+}
+
+.cardSelect {
+  background-color: #6b7280;
+}
+
 
 /* [project]/src/css/home.css [app-client] (css) */
 .container {

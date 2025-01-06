@@ -32,12 +32,18 @@ export function CustomerForm({ product, setAmount, setPrice }) {
           className="form-select"
         >
           <option value="">Departamento</option>
+          <option value="1">Antioquia</option>
+          <option value="2">Atlántico</option>
+          <option value="3">Bogotá</option>
         </select>
 
         <select
           className="form-select"
         >
           <option value="">Ciudad</option>
+          <option value="1">Medellín</option>
+          <option value="2">Barranquilla</option>
+          <option value="3">Bogotá</option>
         </select>
         <div className="phone-input">
           <textarea
@@ -58,6 +64,9 @@ export function CustomerForm({ product, setAmount, setPrice }) {
           className="form-select full-width"
         >
           <option value="">Tienda</option>
+          <option value="1">Tienda 1</option>
+          <option value="2">Tienda 2</option>
+          <option value="3">Tienda 3</option>
         </select>
 
         <label className="checkbox-label full-width">

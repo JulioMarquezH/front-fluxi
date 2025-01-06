@@ -15,6 +15,7 @@ export function ManualOrderModal({ productId, setShowModal = () => { } }) {
   const [price, setPrice] = useState(1)
   const [selectedCompany, setSelectedCompany] = useState(null)
   const [shippingType, setShippingType] = useState('con-recaudo')
+  // haz un estado donde almacene lo siguientes campos los tienes que poner en ingles: Nombres, Apellidos, Número de teléfono, Departamento, Ciudad, Dirección y complementos, Correo electrónico, ¿Desea agregar notas para el proveedor, tienda, product_name, product_id, precio, cantidad, shipping_company, shipping_type? 
 
   useEffect(() => {
     getProductsById(productId)

@@ -7,12 +7,13 @@ import { ResourcesSection } from "./sections/ResourcesSection"
 import { PrivateSection } from "./sections/PrivateSection"
 import { WarrantySection } from "./sections/WarrantySection"
 import { Save } from 'lucide-react'
-import { Button, Tab } from "@mui/material"
+import { Alert, Button, Snackbar, Tab } from "@mui/material"
 import '@/css/productForm.css'
 import { TabPanel } from "./sections/TabPanel"
 import { postCreateProduct } from "@/service/backFluxi"
 
 export function ProductForm() {
+  const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("general")
   const [productData, setProductData] = useState({
     name: "",
@@ -36,7 +37,7 @@ export function ProductForm() {
     user_id: localStorage.getItem('user_id'),
     incomplete_order: {
       days: 0,
-      observation: "", 
+      observation: "",
       enabled: false
     },
     malfunction: {
@@ -67,9 +68,21 @@ export function ProductForm() {
 
   const handlePostProduct = () => {
     postCreateProduct(productData)
-      .then(({ data }) => console.log(data))
+      .then(({ data }) => {
+        if (data.message == 'success') {
+          setOpen(true);
+          setTimeout(() => {
+            window.location.replace('/product');
+          }, 1000);
+        }
+      })
       .catch(({ error }) => console.log(error))
   }
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
 
   return (
@@ -120,6 +133,16 @@ export function ProductForm() {
           <WarrantySection productData={productData} handleChange={handleChange} />
         </TabPanel>
       </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          ¡Creado exitosamente!
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

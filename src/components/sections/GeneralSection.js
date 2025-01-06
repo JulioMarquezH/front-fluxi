@@ -1,9 +1,8 @@
 'use client'
-import { Alert, Card, CardContent, TextField } from '@mui/material'
-import { InfoIcon } from 'lucide-react'
+import { Alert, Card, CardContent, Checkbox, FormControlLabel, TextField } from '@mui/material'
 import '@/css/generalSection.css';
 
-export function GeneralSection({productData, handleChange}) {
+export function GeneralSection({ productData, handleChange }) {
   return (
     <Card>
       <CardContent className="general-section-card">
@@ -102,14 +101,17 @@ export function GeneralSection({productData, handleChange}) {
             />
           </div>
           <div className="form-group" style={{ width: '100%' }}>
-            <TextField
-              id="is_private"
+            <FormControlLabel
+              control={
+                <Checkbox
+                  id='is_private'
+                  checked={productData.is_private}
+                  onChange={handleChange}
+                  name="is_private"
+                  color="primary"
+                />
+              }
               label="Productos privados"
-              variant="outlined"
-              type="number"
-              value={productData.is_private ? 1 : 0} // Para manejar el booleano como 1 o 0
-              onChange={handleChange}
-              fullWidth
             />
           </div>
         </div>

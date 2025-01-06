@@ -27,11 +27,23 @@ export const getOrders = (user_id) => {
 };
 
 export const postCreateProduct = (data) => {
-    return axiosInstanceFluxi.post(`product/`, data);
+    return axiosInstanceFluxi.post(`products/`, data);
 };
 
 export const postCreateStore = (data) => {
     return axiosInstanceFluxi.post(`store/`, data);
+};
+
+export const deleteStore = (id) => {
+    return axiosInstanceFluxi.delete(`store?id=${id}`);
+};
+
+export const deleteOrders = (id) => {
+    return axiosInstanceFluxi.delete(`orders?id=${id}`);
+};
+
+export const deleteProducts = (id) => {
+    return axiosInstanceFluxi.delete(`products?id=${id}`);
 };
 
 

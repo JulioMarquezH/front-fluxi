@@ -1,6 +1,6 @@
 'use client';
 
-import { getProducts } from '@/service/backFluxi';
+import { deleteProducts, getProducts } from '@/service/backFluxi';
 import { Box, CircularProgress } from '@mui/material';
 import { Pencil, Trash2 } from 'lucide-react';
 import Image from 'next/image';
@@ -25,6 +25,17 @@ export function ProductTable() {
   const handleOpenModal = (product_id) => {
     productId.current = product_id
     setShowModal(true)
+  }
+
+  const handleDeleteProducts = (product_id) => {
+    deleteProducts(product_id)
+      .then(({ data }) => {
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
   }
 
   return (
@@ -54,8 +65,8 @@ export function ProductTable() {
                 <td>
                   <div className="product-image">
                     <Image
-                      src={product.image}
-                      alt={product.name}
+                      src={product?.image ? product?.image : null}
+                      alt={product?.name}
                       width={50}
                       height={50}
                     />
@@ -64,23 +75,23 @@ export function ProductTable() {
                 <td>
                   <span className="website-tag">{product.website}</span>
                 </td>
-                <td>{product.sku}</td>
-                <td>{product.name}</td>
-                <td>${product.price}</td>
-                <td>{product.stock}</td>
-                <td>{product.category}</td>
+                <td>{product?.sku}</td>
+                <td>{product?.name}</td>
+                <td>${product?.price}</td>
+                <td>{product?.stock}</td>
+                <td>{product?.category}</td>
                 <td>
-                  <span className="status-badge">{product.status}</span>
+                  <span className="status-badge">{product?.status}</span>
                 </td>
                 <td>
                   <div className="action-buttons">
                     <button className="action-btn edit">
                       <Pencil className="icon" />
                     </button>
-                    <button onClick={() => handleOpenModal(product._id)} className="action-btn edit">
+                    <button onClick={() => handleOpenModal(product?._id)} className="action-btn edit">
                       <Sell />
                     </button>
-                    <button className="action-btn delete">
+                    <button onClick={() => handleDeleteProducts(product?._id)} className="action-btn delete">
                       <Trash2 className="icon" />
                     </button>
                   </div>

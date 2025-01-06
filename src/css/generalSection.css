@@ -1,0 +1,28 @@
+.general-section-card {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.general-section-textfield {
+    width: 100%;
+}
+
+.general-section-alert {
+    margin-bottom: 1.5rem;
+    background-color: #fef9e0;
+    color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.general-section-alert p {
+    margin: 0;
+}
+
+.general-section-alert .MuiSvgIcon-root {
+    font-size: 1.25rem;
+}

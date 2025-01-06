@@ -1,0 +1,35 @@
+.private-section-card {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.private-section-form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.private-section-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.private-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.private-section-form-label {
+    font-weight: 600;
+}
+
+.private-section-input {
+    width: 100%;
+}
+
+.private-section-placeholder {
+    font-size: 0.875rem;
+    color: #6b7280;
+}

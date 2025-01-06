@@ -1,0 +1,46 @@
+.warranty-section-card {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.warranty-section-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.warranty-section-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.warranty-section-form-group {
+    display: grid;
+    gap: 1rem;
+}
+
+.warranty-section-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.warranty-section-grid-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-left: 1.5rem;
+}
+
+.warranty-section-input-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.warranty-section-input-label {
+    font-weight: 600;
+}
+
+.warranty-section-text-field {
+    width: 100%;
+}

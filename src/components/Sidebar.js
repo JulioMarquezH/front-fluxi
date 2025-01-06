@@ -64,9 +64,9 @@ export function Sidebar({ ubication }) {
           <p className="sidebarSectionTitle">Herramientas</p>
         </div>
 
-        <Link href={"#"} onClick={() => { handleRedirect("home") }} className={ubication == 'Métricas' ? "sidebarLink sidebarLinkActive" : "sidebarLink"}>
+        <Link href={"#"} onClick={() => { handleRedirect("orders") }} className={ubication == 'Ordenes' ? "sidebarLink sidebarLinkActive" : "sidebarLink"}>
           <BarChart2 className="sidebarLinkIcon" />
-          Métricas
+          Ordenes
         </Link>
 
         <Link href={"#"} onClick={() => { handleRedirect("store") }} className={ubication == 'Bodega' ? "sidebarLink sidebarLinkActive" : "sidebarLink"}>

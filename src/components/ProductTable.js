@@ -4,11 +4,15 @@ import { getProducts } from '@/service/backFluxi';
 import { Box, CircularProgress } from '@mui/material';
 import { Pencil, Trash2 } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ManualOrderModal } from './ManualOrderModal';
+import { Sell } from './icnos';
 
 export function ProductTable() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false)
+  const productId = useRef(null)
 
   useEffect(() => {
     setLoading(true);
@@ -18,8 +22,16 @@ export function ProductTable() {
       .finally(() => setLoading(false));
   }, []);
 
+  const handleOpenModal = (product_id) => {
+    productId.current = product_id
+    setShowModal(true)
+  }
+
   return (
     <div className="table-container">
+      <div>
+        {showModal && <ManualOrderModal productId={productId.current} setShowModal={setShowModal} />}
+      </div>
       {!loading ? (
         <table className="product-table">
           <thead>
@@ -65,6 +77,9 @@ export function ProductTable() {
                     <button className="action-btn edit">
                       <Pencil className="icon" />
                     </button>
+                    <button onClick={() => handleOpenModal(product._id)} className="action-btn edit">
+                      <Sell />
+                    </button>
                     <button className="action-btn delete">
                       <Trash2 className="icon" />
                     </button>
@@ -75,7 +90,7 @@ export function ProductTable() {
           </tbody>
         </table>)
         : (
-          <Box sx={{ display:'flex', justifyContent: 'center' }} ><CircularProgress /></Box>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }} ><CircularProgress /></Box>
         )}
     </div>
   );

@@ -1,0 +1,20 @@
+.resources-section-card {
+    padding: 1.5rem;
+}
+
+.resources-section-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resources-section-info-icon {
+    height: 1rem;
+    width: 1rem;
+    color: #4b5563;
+}
+
+.resources-section-alert-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+}

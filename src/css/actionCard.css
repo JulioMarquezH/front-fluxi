@@ -1,4 +1,3 @@
-
 .actionCard {
     padding: 1.5rem;
     background-color: white;
@@ -6,36 +5,61 @@
     border: 1px solid #e5e7eb;
     transition: border-color 0.3s ease;
     text-decoration: none;
-  }
-  
-  .actionCard:hover {
+}
+
+.actionCard:hover {
     border-color: #3b82f6;
-  }
-  
-  .actionCardContent {
+}
+
+.actionCardContent {
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
-  
-  .actionCardIcon {
+}
+
+.actionCardIcon {
     width: 1.5rem;
     height: 1.5rem;
     color: #6b7280;
     transition: color 0.3s ease;
-  }
-  
-  .actionCard:hover .actionCardIcon {
+}
+
+.actionCard:hover .actionCardIcon {
     color: #3b82f6;
-  }
-  
-  .actionCardTitle {
+}
+
+.actionCardTitle {
     font-size: 1.125rem;
     color: #4b5563;
     transition: color 0.3s ease;
-  }
-  
-  .actionCard:hover .actionCardTitle {
+}
+
+.actionCard:hover .actionCardTitle {
     color: #3b82f6;
-  }
-  
+}
+
+.company-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.company-item:hover {
+    background-color: #f7f7f7;
+}
+
+.company-item.selected {
+    border-color: #007bff;
+    background-color: #e9f5ff;
+    font-weight: bold;
+}
+
+.cardSelect {
+    background-color: #6b7280;
+}
